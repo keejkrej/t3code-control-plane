@@ -1,0 +1,54 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0b0b0c;
+  --panel: #151517;
+  --border: #2a2a2e;
+  --text: #ededed;
+  --muted: #9a9aa2;
+  --accent: #ffffff;
+  --danger: #ff6b6b;
+  --ok: #4ade80;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fafafa;
+    --panel: #ffffff;
+    --border: #e4e4e7;
+    --text: #18181b;
+    --muted: #71717a;
+    --accent: #000000;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+main { max-width: 760px; margin: 0 auto; padding: 48px 20px; }
+header.top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+header.top a { color: inherit; text-decoration: none; font-weight: 600; }
+h1 { font-size: 22px; margin: 0 0 8px; }
+h2 { font-size: 16px; margin: 32px 0 12px; }
+p { color: var(--muted); line-height: 1.5; }
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.spread { justify-content: space-between; }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 16px 0; }
+dt { color: var(--muted); }
+dd { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; word-break: break-all; }
+code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.code { font-size: 28px; letter-spacing: 4px; font-weight: 600; }
+button, .button {
+  appearance: none; border: 1px solid var(--border); background: var(--accent); color: var(--bg);
+  padding: 8px 14px; border-radius: 8px; font: inherit; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-block;
+}
+button.secondary { background: transparent; color: var(--text); }
+button.danger { background: transparent; color: var(--danger); border-color: var(--danger); }
+input[type="text"] { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+form { display: inline; }
+.device { border-top: 1px solid var(--border); padding: 16px 0; }
+.device:first-child { border-top: 0; padding-top: 0; }
+.badge { font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+.badge.ok { color: var(--ok); border-color: var(--ok); }
+.badge.bad { color: var(--danger); border-color: var(--danger); }
+.notice { border-left: 3px solid var(--border); padding-left: 12px; }
